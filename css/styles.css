@@ -6,6 +6,13 @@
   width: 33%;
 }
 
+.btn-success {
+  
+  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+  font-weight: 600;
+  font-size: larger;
+}
+
 .green {
   color: greenyellow;
 }
@@ -33,7 +40,10 @@
   border: 1.5px solid #485461;  
   padding: 1em;
   border-radius: .5em;
-  background-color: #EBB52E;
+  background: #F2994A;  /* fallback for old browsers */ 
+  background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   } 
 
   .container {
@@ -61,6 +71,8 @@
   input {
     width: 1em;
     height: 1em;
+    cursor: pointer;
+    
   }
 
   .order {
@@ -73,6 +85,68 @@
 
 .form-check{
   margin:0.5em;
+}
+
+.form-check-label{
+  padding-left: 1.2em;
+  cursor:pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 2em;
+  height: 1.5em;
+  width: 1.5em;
+  background-color: white;
+  
+  border-radius: 50%;
+  /*border: solid black;
+  border-width: 1px;*/
+}
+
+ .checkmark:hover {
+  background-color: lightgrey;
+}
+
+
+ input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+ input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+ .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 .2em .2em 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+.form-check-input{
+  position: absolute;
+  opacity: 0;
+    height: 0;
+  width: 0;
 }
 
 .footer-padding {

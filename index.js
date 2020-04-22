@@ -100,12 +100,15 @@ request.onload = function() {
 		 
 			const input = document.createElement('input');
 			const label = document.createElement('label');
+			const checkmark = document.createElement('span');
 			  
 			label.textContent = alternativeArray[iteration];
 			input.setAttribute('class','form-check-input');
+			checkmark.setAttribute('class','checkmark');
 			input.setAttribute('type','radio');
 			input.setAttribute('name',`${order}`);
 			input.setAttribute('id',`${order}-${iteration}`);
+			checkmark.setAttribute('id',`check-${order}-${iteration}`);
 			label.setAttribute('class','form-check-label');
 			label.setAttribute('for',`${order}-${iteration}`);
 
@@ -113,7 +116,9 @@ request.onload = function() {
 //option definition with checkbox and description labeled
 			const option = document.createElement('div');
 			option.setAttribute('class','form-check');
+			
 			option.appendChild(input);
+			option.appendChild(checkmark);
 			option.appendChild(label);
 			card.appendChild(option);
 			iteration++;
@@ -149,8 +154,8 @@ solutions.map( el => {
 	
 	if (document.getElementById(`${solIndex}-${el}`).checked) {
 		score++;
-	 let element = 	document.getElementById(`${solIndex}-${el}`);
-	 element.setAttribute('class', 'green form-check-input');
+	 let element = 	document.getElementById(`check-${solIndex}-${el}`);
+	 element.style.backgroundColor = "green";
 		
 	}
 	solIndex++;
@@ -158,10 +163,10 @@ solutions.map( el => {
 }
 );
 
-var list = document.getElementsByClassName("form-check-input");
-for (let item of list) {
-	item.checked = false ;
-	}
+//var list = document.getElementsByClassName("form-check-input");
+//for (let item of list) {
+//	item.checked = false ;
+//	}
 
   alert(`Your score is : ${score}  of 10`);
   setTimeout(()=>{
