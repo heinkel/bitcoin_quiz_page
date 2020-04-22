@@ -1,0 +1,95 @@
+.btn{
+  display: flex; 
+  justify-content: center; 
+   margin: 0 auto; width: 144px; 
+   margin-bottom: 2em;
+  width: 33%;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.overlay    {
+  position: absolute;
+  z-index: 1; /* taking it to front over animation effect*/
+  height: 120vh; /*viewport height*/
+  width: 100%;
+  background: rgb(0, 0, 0,.9); /*black in 90% of transparency*/
+  place-content: center; /*content text should be in the middle this requires to call display :grid property*/
+  color: white;
+  display: none; /*display only activates if place-content 'center' is activated*/
+  opacity: 0; /*I dont want to see this by default just when button click event is triggered I will change this to 1 */
+}
+
+.animate-overlay{
+  animation: overlay 3s forwards; /* first animation name, then duration, finally what next*/
+}
+
+
+.card {
+  margin: .5em; 
+  /*width: 60%; */
+  border: 1.5px solid #485461;  
+  padding: 1em;
+  border-radius: .5em;
+  background-color: #EBB52E;
+  } 
+
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  @media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+  .navbar {
+    position: block;
+  width: 100%;
+    display: flex;
+  }
+
+
+  body {
+    background-color: #b3b9c5;
+  }
+
+  input {
+    width: 1em;
+    height: 1em;
+  }
+
+  .order {
+   font-weight: bold;
+
+   font-size: 1em;
+   padding-right: 0em; 
+   padding-left: 1em;
+  }
+
+.form-check{
+  margin:0.5em;
+}
+
+.footer-padding {
+  padding-bottom: 60px;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #0B0E11;
+}
+
+.footer p {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #6E767B;
+}
